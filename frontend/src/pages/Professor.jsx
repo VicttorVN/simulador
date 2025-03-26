@@ -11,11 +11,14 @@ const Professor = () => {
   useEffect(() => {
     axios.get('/api/ranking/')
       .then(response => {
-        setRanking(response.data);
+        // Garante que seja array
+        const dados = Array.isArray(response.data) ? response.data : [];
+        setRanking(dados);
         setLoading(false);
       })
       .catch(error => {
         console.error('Erro ao carregar ranking:', error);
+        setRanking([]); // fallback seguro
         setLoading(false);
       });
   }, []);
