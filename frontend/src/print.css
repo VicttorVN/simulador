@@ -1,0 +1,25 @@
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  nav, .no-print {
+    display: none !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #000;
+    padding: 6px;
+    text-align: left;
+  }
+
+  h1, h2, h3 {
+    margin-top: 20px;
+  }
+}
